@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: 'postgres:16-alpine'
+    environment:
+      - 'POSTGRES_DB=nutrifit_db'
+      - 'POSTGRES_USER=nutrifit'
+      - 'POSTGRES_PASSWORD=nutrifit_secret'
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
